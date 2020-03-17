@@ -18,10 +18,12 @@ public class RecommendationServiceRestController {
     @HystrixCommand(fallbackMethod = "recommendationFallback")
     @ResponseBody
     public List<Product> recommendations() {
+        System.out.println("=======Get Called=========");
         List<Product> products = new ArrayList<Product>();
         products.add(new Product("Product1", "Description1", "link1"));
         products.add(new Product("Product2", "Description2", "link3"));
         products.add(new Product("Product3", "Description3", "link3"));
+        System.out.println("=======Done processing=========");
         return products;
     }
     
